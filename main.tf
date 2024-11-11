@@ -8,3 +8,12 @@ resource "aws_vpc" "dev_vpc" {
     name     = "deham19"
   }       
 }
+
+# Create an Internet Gateway
+resource "aws_internet_gateway" "dev_igw" {
+  vpc_id = aws_vpc.dev_vpc.id
+
+  tags       =  {
+    name     = "dev_igw"
+  }
+  }
